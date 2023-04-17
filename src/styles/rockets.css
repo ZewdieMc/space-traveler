@@ -1,0 +1,11 @@
+.rockets-list {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.rocket-list .rocket {
+  display: flex;
+  gap: 1rem;
+}
