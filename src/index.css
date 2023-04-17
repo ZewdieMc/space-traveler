@@ -40,3 +40,7 @@ nav ul .nav-items {
 nav ul .nav-items:focus {
   text-decoration: underline;
 }
+
+.profile-wrapper {
+  margin: 2.5% 25%;
+}
