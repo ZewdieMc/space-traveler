@@ -1,10 +1,15 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Profile from './components/Profile';
 
 function App() {
   return (
-    <div className="space-traveler">
+    <BrowserRouter>
       <NavBar />
-    </div>
+      <Routes>
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
