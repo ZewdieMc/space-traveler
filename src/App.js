@@ -1,7 +1,9 @@
+import NavBar from './components/NavBar';
+
 function App() {
   return (
-    <div className="App">
-      {/* Code goes here. */}
+    <div className="space-traveler">
+      <NavBar />
     </div>
   );
 }
