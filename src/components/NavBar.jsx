@@ -3,7 +3,7 @@ import { useState } from 'react';
 import logo from '../images/planet_1.png';
 
 const NavBar = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState('Rockets');
 
   return (
     <header>
