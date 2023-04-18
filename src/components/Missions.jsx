@@ -10,17 +10,15 @@ const Missions = () => {
   useEffect(() => {
     dispatch(fetchMissions());
   }, [dispatch]);
-
+  console.log(missions); // eslint-disable-line no-console
   return (
     <div className="wrapper">
       <table>
         <thead>
-          <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th className="status">Status</th>
-            <th> </th>
-          </tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th className="status">Status</th>
+          <th> </th>
         </thead>
         <tbody>
           {missions.map((mission) => (
