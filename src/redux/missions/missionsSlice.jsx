@@ -29,19 +29,20 @@ const missionsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchMissions.fulfilled, (state, action) => {
-        const missionsList = [];
-        action.payload.map((missions) => (
-          missionsList.push({
-            id: missions.missioin_id,
-            name: missions.missioin_name,
-            description: missions.description,
+        const response = action.payload;
+        const MissionsData = [];
+        response.forEach((mission) => {
+          MissionsData.push({
+            id: mission.mission_id,
+            mission_name: mission.mission_name,
+            description: mission.description,
             reserve: true,
-          })
-        ));
+          });
+        });
         return ({
           ...state,
           isLoading: false,
-          missions: missionsList,
+          missions: MissionsData,
         });
       })
       .addCase(fetchMissions.pending, (state) => ({
