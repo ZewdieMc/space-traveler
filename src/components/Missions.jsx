@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchMissions } from '../redux/missions/missionsSlice';
+import MissionsPage from '../pages/MissionsPage';
 
 const Missions = () => {
   const { missions } = useSelector((state) => state.missions);
@@ -11,24 +12,19 @@ const Missions = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="wrapper">
       <table>
         <thead>
           <tr>
             <th>Mission</th>
             <th>Description</th>
-            <th>Status</th>
+            <th className="status">Status</th>
             <th> </th>
           </tr>
         </thead>
         <tbody>
-          {missions.map((msn) => (
-            <tr key={msn.id}>
-              <td>{msn.name}</td>
-              <td>{msn.description}</td>
-              <td>Not Member</td>
-              <td>Join Missions</td>
-            </tr>
+          {missions.map((mission) => (
+            <MissionsPage key={mission.id} mission={mission} />
           ))}
         </tbody>
       </table>
