@@ -57,3 +57,51 @@ nav ul .active {
   flex-direction: column;
   gap: 1rem;
 }
+
+.rocket-list {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.rocket-list .rocket {
+  display: flex;
+  gap: 1rem;
+}
+
+.rocket-list .rocket img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.rocket-list .rocket-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.table-wrapper {
+  width: 97%;
+  height: auto;
+  margin: auto;
+  padding: 5px 0 0 5px;
+  box-shadow: 0 10px 17px -5px #f5f0f0;
+}
+
+th,
+td {
+  vertical-align: middle;
+}
+
+td.title,
+th {
+  font-weight: 700;
+  font-size: larger;
+}
+
+.leavjoinBtn {
+  width: max-content;
+}
