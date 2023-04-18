@@ -22,11 +22,11 @@ const Missions = () => {
         </thead>
         <tbody>
           {missions.map((msn) => (
-            <tr key={msn.id} >
-                <td>msn.name</td>
-                <td>msn.description</td>
-                <td>Not Member</td>
-                <td>Join Mission</td>
+            <tr key={msn.id}>
+              <td>msn.name</td>
+              <td>msn.description</td>
+              <td>Not Member</td>
+              <td>Join Mission</td>
             </tr>
           ))}
         </tbody>

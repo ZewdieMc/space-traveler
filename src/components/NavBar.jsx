@@ -3,9 +3,9 @@ import logo from '../images/planet_1.png';
 
 const NavBar = () => {
   const navLinkStyle = ({ isActive }) => ({
-      fontWeight: isActive ? 'bold' : 'normal',
-      textDecoration: isActive ? 'underline' : 'none',
-});
+    fontWeight: isActive ? 'bold' : 'normal',
+    textDecoration: isActive ? 'underline' : 'none',
+  });
 
   return (
     <header>
@@ -41,6 +41,6 @@ const NavBar = () => {
       </nav>
     </header>
   );
-}
+};
 
 export default NavBar;
