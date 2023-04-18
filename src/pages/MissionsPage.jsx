@@ -1,32 +1,42 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
 const MissionsPage = ({ mission }) => {
-  const md = mission;
+  const dispatch = useDispatch();
+
+  const handleJoining = () => {
+    // code goes here
+    dispatch();
+  };
+
+  const handleLeaving = () => {
+    // code goes here
+    dispatch();
+  };
+
   return (
-    <tr>
-      <td className="title">
-        {' '}
-        {md.name}
-        {' '}
-      </td>
-      <td className="desc">
-        {' '}
-        {md.description}
-        {' '}
-      </td>
+    <tr className="data">
+      <td className="title">{mission.mission_name}</td>
+      <td className="desc">{mission.description}</td>
       <td className="status">
-        {(md.reserve ? <p className="active">Active Member</p> : <p className="inactive">Not A Member</p>)}
+        {' '}
+        {mission.reserve ? (
+          <p className="active">Active Member</p>
+        ) : (
+          <p className="inactive">Not A Member</p>
+        )}
       </td>
       <td>
-        {(md.reserve ? (
-          <button type="button" className="leave" onClick>
+        {' '}
+        {mission.reserve ? (
+          <button type="button" className="leave" onClick={() => handleLeaving()}>
             Leave Mission
           </button>
         ) : (
-          <button type="button" className="join" onClick>
+          <button type="button" className="join" onClick={() => handleJoining()}>
             Join mission
           </button>
-        ))}
+        )}
       </td>
     </tr>
   );
@@ -34,7 +44,7 @@ const MissionsPage = ({ mission }) => {
 
 MissionsPage.propTypes = {
   mission: PropTypes.shape({
-    id: PropTypes.string,
+    mission_id: PropTypes.string,
     mission_name: PropTypes.string,
     description: PropTypes.string,
     reserve: PropTypes.bool,

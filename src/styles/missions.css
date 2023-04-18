@@ -1,15 +1,38 @@
+.wrapper {
+  width: 95%;
+  height: auto;
+  margin: auto;
+  padding: 5px 0 0 5px;
+  box-shadow: 0 10px 17px -5px #f5f0f0;
+}
+
+button {
+  width: max-content;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.25rem;
+  background-color: #0290ff;
+  color: #fff;
+  border: none;
+}
+
 table {
     border: 1px solid #b1b0b0;
     font-weight: normal;
     font-size: 1.25rem;
   }
   
+  tr:nth-child(odd) {
+    background-color: #e3e8e3;
+    border:1px solid #bab5b5 !important;
+  }
+
   th,
   td {
-    border: 1px solid #b1b0b0;
     padding: 10px;
+    border-right: 1px solid #bab5b5 !important;
   }
-  
+
   td.title {
     font-weight: 600;
   }
