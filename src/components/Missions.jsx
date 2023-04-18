@@ -1,12 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { FetchMissions } from '../redux/missions/missions';
+import { useEffect } from 'react';
+import { fetchMissions } from '../redux/missions/missionsSlice';
 
 const Missions = () => {
   const { missions } = useSelector((state) => state.missions);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(FetchMissions());
+    dispatch(fetchMissions());
   }, [dispatch]);
 
   return (
@@ -23,10 +24,10 @@ const Missions = () => {
         <tbody>
           {missions.map((msn) => (
             <tr key={msn.id}>
-              <td>msn.name</td>
-              <td>msn.description</td>
+              <td>{msn.name}</td>
+              <td>{msn.description}</td>
               <td>Not Member</td>
-              <td>Join Mission</td>
+              <td>Join Missions</td>
             </tr>
           ))}
         </tbody>
