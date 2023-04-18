@@ -9,14 +9,27 @@ const NavBar = () => (
         <h1>Space traveler&apos; Hub</h1>
       </Link>
       <ul>
-        <NavLink className="nav-items" to="/">
+        <NavLink
+          className={({ isActive }) => (isActive ? 'active' : null)}
+          style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })}
+          to="/"
+        >
           Rockets
         </NavLink>
-        <NavLink className="nav-items" to="/missions">
+        <span>|</span>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'active' : null)}
+          style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })}
+          to="/missions"
+        >
           Missions
         </NavLink>
         <span>|</span>
-        <NavLink className="nav-items" to="/profile">
+        <NavLink
+          className={({ isActive }) => (isActive ? 'active' : null)}
+          style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })}
+          to="/profile"
+        >
           My Profile
         </NavLink>
       </ul>
