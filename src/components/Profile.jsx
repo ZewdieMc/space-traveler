@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Profile = () => (
   <div className="profile-wrapper">
     <h3>Under Construction</h3>
