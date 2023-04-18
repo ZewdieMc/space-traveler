@@ -26,7 +26,7 @@ header nav img.logo {
   width: 50px;
 }
 
-nav ul {
+nav div {
   margin-left: auto;
   display: flex;
   justify-content: center;
@@ -35,10 +35,6 @@ nav ul {
 
 nav ul .nav-items {
   font-size: 1.2rem;
-}
-
-nav ul .nav-items:focus {
-  text-decoration: underline;
 }
 
 .profile-wrapper {
