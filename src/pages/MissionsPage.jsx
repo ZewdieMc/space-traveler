@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 
-const MissionsPage = ({ mission }) => {
+const MissionsPage = ({ mission, index }) => {
   const dispatch = useDispatch();
 
   const handleLeavingMissions = () => {
@@ -15,26 +17,41 @@ const MissionsPage = ({ mission }) => {
   };
 
   return (
-    <tr className="data">
+    <tr>
+      <td className="title">{index}</td>
       <td className="title">{mission.mission_name}</td>
-      <td className="desc">{mission.description}</td>
-      <td className="status">
+      <td>{mission.description}</td>
+      <td>
         {' '}
-        {mission.reserved && (
-          <p className="active">Active Member</p>
+        {mission.reserved ? (
+          <h4><Badge bg="primary">Active Member</Badge></h4>
+        ) : (
+          <h4><Badge bg="secondary">Not A Member</Badge></h4>
         )}
-        <p className="inactive">Not A Member</p>
       </td>
       <td>
         {' '}
-        {mission.reserved && (
-          <button type="button" className="leave" onClick={() => handleLeavingMissions()}>
+        {mission.reserved ? (
+          <Button
+            className="leavjoinBtn"
+            type="button"
+            variant="outline-secondary"
+            size="lg"
+            onClick={() => handleLeavingMissions()}
+          >
             Leave Mission
-          </button>
+          </Button>
+        ) : (
+          <Button
+            className="leavjoinBtn"
+            type="button"
+            variant="outline-danger"
+            size="lg"
+            onClick={() => handleJoiningMissions()}
+          >
+            Join mission
+          </Button>
         )}
-        <button type="button" className="join" onClick={() => handleJoiningMissions()}>
-          Join mission
-        </button>
       </td>
     </tr>
   );
@@ -47,6 +64,7 @@ MissionsPage.propTypes = {
     description: PropTypes.string,
     reserved: PropTypes.bool,
   }).isRequired,
+  index: PropTypes.string.isRequired,
 };
 
 export default MissionsPage;
