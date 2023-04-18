@@ -7,6 +7,7 @@ const APIURL = 'https://api.spacexdata.com/v3/missions';
 // Actions
 const FETCH_MISSIONS = 'missionsReducer/FETCH_MISSIONS';
 
+// Action Creators
 export const fetchMissions = createAsyncThunk(FETCH_MISSIONS, async (thunkAPI) => {
   try {
     const res = await axios.get(APIURL);
@@ -25,7 +26,27 @@ const initialState = {
 const missionsSlice = createSlice({
   name: 'missions',
   initialState,
-  reducers: { },
+  reducers: {
+    joinMission: (state, action) => {
+      console.log(state.missions); // eslint-disable-line no-console
+      const newMissions = state.missions.map((mission) => {
+        if (mission.id !== action.payload) {
+          return mission;
+        }
+        return { ...mission, reserved: true };
+      });
+      return { ...state, missions: newMissions };
+    },
+    leaveMission: (state, action) => {
+      const newMissions = state.missions.map((mission) => {
+        if (mission.id === action.payload) {
+          return { ...mission, reserved: false };
+        }
+        return mission;
+      });
+      return { ...state, missions: newMissions };
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchMissions.fulfilled, (state, action) => {
@@ -36,7 +57,6 @@ const missionsSlice = createSlice({
             id: mission.mission_id,
             mission_name: mission.mission_name,
             description: mission.description,
-            reserved: true,
           });
         });
         return ({
@@ -58,4 +78,5 @@ const missionsSlice = createSlice({
   },
 });
 
+export const { joinMission, leaveMission } = missionsSlice.actions;
 export default missionsSlice.reducer;
