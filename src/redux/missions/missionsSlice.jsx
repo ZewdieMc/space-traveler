@@ -1,22 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+// API URL
+const APIURL = 'https://api.spacexdata.com/v3/missions';
+
+// Actions
+const FETCH_MISSIONS = 'missionsReducer/FETCH_MISSIONS';
+
+export const fetchMissions = createAsyncThunk(FETCH_MISSIONS, async (thunkAPI) => {
+  try {
+    const res = await axios.get(APIURL);
+    return res.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue({ error: 'Error fetching missions from API' });
+  }
+});
 
 const initialState = {
-  missions: [{
-    id: '9D1B7E0',
-    name: 'Thaicom',
-    description: 'Thaicom is the name of a series of communications satellite, operated from Thailand.',
-  },
-  {
-    id: 'F4F83DE',
-    name: 'Telstar',
-    description: 'Telstar 19V (Telstar 19 Vantage) is a communication satellite in the Telstar series of the Canadian satellite communications company Telesat',
-  },
-  {
-    id: 'F3364BF',
-    name: 'Iridium NEXT',
-    description: 'In 2017, Iridium began launching Iridium NEXT, a second-generation worldwide network of telecommunications satellites.',
-  },
-  ],
+  missions: [],
   isLoading: false,
   error: '',
 };
@@ -24,11 +25,37 @@ const initialState = {
 const missionsSlice = createSlice({
   name: 'missions',
   initialState,
-  reducers: {
-    fetchMissions: (state) => state,
+  reducers: { },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchMissions.fulfilled, (state, action) => {
+        const response = action.payload;
+        const MissionsData = [];
+        response.forEach((mission) => {
+          MissionsData.push({
+            id: mission.mission_id,
+            mission_name: mission.mission_name,
+            description: mission.description,
+            reserved: true,
+          });
+        });
+        return ({
+          ...state,
+          isLoading: false,
+          missions: MissionsData,
+        });
+      })
+      .addCase(fetchMissions.pending, (state) => ({
+        ...state,
+        isLoading: true,
+        error: '',
+      }))
+      .addCase(fetchMissions.rejected, (state, action) => ({
+        ...state,
+        error: action.payload.error,
+        isLoading: false,
+      }));
   },
-  extraReducers: {},
 });
 
-export const { fetchMissions } = missionsSlice.actions;
 export default missionsSlice.reducer;
