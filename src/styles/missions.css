@@ -6,13 +6,14 @@
   box-shadow: 0 10px 17px -5px #f5f0f0;
 }
 
-th, td {
+th,
+td {
   vertical-align: middle;
 }
 
 td.title,
 th {
-  font-weight:700;
+  font-weight: 700;
   font-size: larger;
 }
 
