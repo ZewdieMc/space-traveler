@@ -36,7 +36,7 @@ const missionsSlice = createSlice({
             id: mission.mission_id,
             mission_name: mission.mission_name,
             description: mission.description,
-            reserve: true,
+            reserved: true,
           });
         });
         return ({
