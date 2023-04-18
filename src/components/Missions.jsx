@@ -13,7 +13,7 @@ const Missions = () => {
   }, [dispatch]);
   console.log(missions); // eslint-disable-line no-console
   return (
-    <div className="wrapper">
+    <div className="table-wrapper">
       <Table striped bordered>
         <thead>
           <tr>
