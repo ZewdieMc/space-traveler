@@ -28,7 +28,6 @@ const missionsSlice = createSlice({
   initialState,
   reducers: {
     joinMission: (state, action) => {
-      console.log(state.missions); // eslint-disable-line no-console
       const newMissions = state.missions.map((mission) => {
         if (mission.id !== action.payload) {
           return mission;
