@@ -2,28 +2,27 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
+import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
 
 const MissionsPage = ({ mission, index }) => {
   const dispatch = useDispatch();
 
-  const handleLeavingMissions = () => {
-    // code goes here
-    dispatch();
+  const handleJoiningMissions = (id) => {
+    dispatch(joinMission(id));
   };
 
-  const handleJoiningMissions = () => {
-    // code goes here
-    dispatch();
+  const handleLeavingMissions = (id) => {
+    dispatch(leaveMission(id));
   };
 
   return (
     <tr>
-      <td className="title">{index}</td>
+      <td className="title">{index + 1}</td>
       <td className="title">{mission.mission_name}</td>
       <td>{mission.description}</td>
       <td>
         {' '}
-        {mission.reserved ? (
+        {mission.reserved && mission.reserved ? (
           <h4><Badge bg="primary">Active Member</Badge></h4>
         ) : (
           <h4><Badge bg="secondary">Not A Member</Badge></h4>
@@ -31,13 +30,13 @@ const MissionsPage = ({ mission, index }) => {
       </td>
       <td>
         {' '}
-        {mission.reserved ? (
+        {mission.reserved && mission.reserved ? (
           <Button
             className="leavjoinBtn"
             type="button"
             variant="outline-secondary"
             size="lg"
-            onClick={() => handleLeavingMissions()}
+            onClick={() => handleLeavingMissions(mission.id)}
           >
             Leave Mission
           </Button>
@@ -47,7 +46,7 @@ const MissionsPage = ({ mission, index }) => {
             type="button"
             variant="outline-danger"
             size="lg"
-            onClick={() => handleJoiningMissions()}
+            onClick={() => handleJoiningMissions(mission.id)}
           >
             Join mission
           </Button>
@@ -59,12 +58,12 @@ const MissionsPage = ({ mission, index }) => {
 
 MissionsPage.propTypes = {
   mission: PropTypes.shape({
-    mission_id: PropTypes.string,
+    id: PropTypes.string,
     mission_name: PropTypes.string,
     description: PropTypes.string,
     reserved: PropTypes.bool,
   }).isRequired,
-  index: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default MissionsPage;
