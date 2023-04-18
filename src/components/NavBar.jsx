@@ -11,7 +11,7 @@ const NavBar = () => (
       <ul>
         <NavLink
           className={({ isActive }) => (isActive ? 'active' : null)}
-          style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })}
+          style={({ isActive }) => (isActive ? { textDecoration: 'underline', fontWeight: 'bold' } : { textDecoration: 'none' })}
           to="/"
         >
           Rockets
@@ -19,7 +19,7 @@ const NavBar = () => (
         <span>|</span>
         <NavLink
           className={({ isActive }) => (isActive ? 'active' : null)}
-          style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })}
+          style={({ isActive }) => (isActive ? { textDecoration: 'underline', fontWeight: 'bold' } : { textDecoration: 'none' })}
           to="/missions"
         >
           Missions
@@ -27,7 +27,7 @@ const NavBar = () => (
         <span>|</span>
         <NavLink
           className={({ isActive }) => (isActive ? 'active' : null)}
-          style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })}
+          style={({ isActive }) => (isActive ? { textDecoration: 'underline', fontWeight: 'bold' } : { textDecoration: 'none' })}
           to="/profile"
         >
           My Profile
