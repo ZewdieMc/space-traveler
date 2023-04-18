@@ -42,7 +42,12 @@ nav ul .active {
 }
 
 .profile-wrapper {
-  margin: 2.5% 25%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 2.5%;
 }
 
 .space-rockets {
