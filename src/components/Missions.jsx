@@ -21,7 +21,7 @@ const Missions = () => {
           <th> </th>
         </thead>
         <tbody>
-          {missions.map((mission) => (
+          {missions && missions.map((mission) => (
             <MissionsPage key={mission.id} mission={mission} />
           ))}
         </tbody>

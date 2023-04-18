@@ -20,23 +20,21 @@ const MissionsPage = ({ mission }) => {
       <td className="desc">{mission.description}</td>
       <td className="status">
         {' '}
-        {mission.reserve ? (
+        {mission.reserved && (
           <p className="active">Active Member</p>
-        ) : (
-          <p className="inactive">Not A Member</p>
         )}
+        <p className="inactive">Not A Member</p>
       </td>
       <td>
         {' '}
-        {mission.reserve ? (
+        {mission.reserved && (
           <button type="button" className="leave" onClick={() => handleLeaving()}>
             Leave Mission
           </button>
-        ) : (
-          <button type="button" className="join" onClick={() => handleJoining()}>
-            Join mission
-          </button>
         )}
+        <button type="button" className="join" onClick={() => handleJoining()}>
+          Join mission
+        </button>
       </td>
     </tr>
   );
@@ -47,7 +45,7 @@ MissionsPage.propTypes = {
     mission_id: PropTypes.string,
     mission_name: PropTypes.string,
     description: PropTypes.string,
-    reserve: PropTypes.bool,
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 
