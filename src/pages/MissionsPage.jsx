@@ -4,12 +4,12 @@ import { useDispatch } from 'react-redux';
 const MissionsPage = ({ mission }) => {
   const dispatch = useDispatch();
 
-  const handleJoining = () => {
+  const handleLeavingMissions = () => {
     // code goes here
     dispatch();
   };
 
-  const handleLeaving = () => {
+  const handleJoiningMissions = () => {
     // code goes here
     dispatch();
   };
@@ -28,11 +28,11 @@ const MissionsPage = ({ mission }) => {
       <td>
         {' '}
         {mission.reserved && (
-          <button type="button" className="leave" onClick={() => handleLeaving()}>
+          <button type="button" className="leave" onClick={() => handleLeavingMissions()}>
             Leave Mission
           </button>
         )}
-        <button type="button" className="join" onClick={() => handleJoining()}>
+        <button type="button" className="join" onClick={() => handleJoiningMissions()}>
           Join mission
         </button>
       </td>
