@@ -9,9 +9,9 @@ const Missions = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
-  console.log(missions); // eslint-disable-line no-console
+    if (missions.length === 0) dispatch(fetchMissions());
+  }, [dispatch, missions.length]);
+
   return (
     <div className="table-wrapper">
       <Table striped bordered>
