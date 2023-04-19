@@ -6,7 +6,7 @@ const NavBar = () => (
     <nav>
       <Link to="/">
         <img className="logo" src={logo} alt="" />
-        <h1>Space Traveler&apos; Hub</h1>
+        <h1>Space Traveler&apos;s Hub</h1>
       </Link>
       <ul>
         <NavLink
