@@ -6,6 +6,8 @@ import Rocket from './Rocket';
 const Rockets = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets.rockets);
+  const error = useSelector((state) => state.rockets.error);
+  const isLoading = useSelector((state) => state.rockets.isLoading);
 
   useEffect(() => {
     if (rockets.length === 0) dispatch(fetchRockets());
@@ -13,8 +15,10 @@ const Rockets = () => {
 
   return (
     <div className="rocket-list">
+      {error && <p>Error Loading rockets</p>}
       {rockets
         && rockets.map((rocket) => <Rocket key={rocket.id} rocket={rocket} />)}
+      {isLoading && <p>Loading...</p>}
     </div>
   );
 };
