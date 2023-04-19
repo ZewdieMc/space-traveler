@@ -41,7 +41,7 @@ Rocket.propTypes = {
     rocket_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     flickr_images: PropTypes.arrayOf(PropTypes.string).isRequired,
-    reserved: PropTypes.bool.isRequired,
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 export default Rocket;
