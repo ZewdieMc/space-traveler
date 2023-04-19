@@ -8,11 +8,15 @@ function Profile() {
     return missions.filter((mission) => mission.reserved);
   });
 
+  const rockets = useSelector((state) => state.rockets.rockets);
+
+  const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+
   return (
     <div className="profile-wrapper">
-      <div>
+      <div style={{ width: '100%' }}>
         <h4>My Missions</h4>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '100%' }}>
           {JoinedMissions.length ? JoinedMissions.map((mission) => (
             <ListGroup key={mission.id} variant="flush">
               <ListGroup.Item>{mission.mission_name}</ListGroup.Item>
@@ -25,8 +29,20 @@ function Profile() {
             )}
         </Card>
       </div>
-      <div>
-        <h3>My Rockets</h3>
+      <div style={{ width: '100%' }}>
+        <h4>My Rockets</h4>
+        <Card style={{ width: '100%' }}>
+          {reservedRockets.length ? reservedRockets.map((rocket) => (
+            <ListGroup key={rocket.id} variant="flush">
+              <ListGroup.Item>{rocket.rocket_name}</ListGroup.Item>
+            </ListGroup>
+          ))
+            : (
+              <ListGroup>
+                <ListGroup.Item>You have no reserved rockets</ListGroup.Item>
+              </ListGroup>
+            )}
+        </Card>
       </div>
     </div>
   );
