@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { screen, fireEvent } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import renderWithProviders from '../utils/test-utils';
 import Missions from '../components/Missions';
