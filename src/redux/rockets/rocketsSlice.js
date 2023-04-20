@@ -44,7 +44,7 @@ const rocketsSlice = createSlice({
     builder.addCase(fetchRockets.fulfilled, (state, action) => {
       const rocketList = action.payload.map((rocket) => ({
         id: rocket.id,
-        rocket_name: rocket.name,
+        name: rocket.name,
         description: rocket.description,
         flickr_images: [...rocket.flickr_images],
       }));

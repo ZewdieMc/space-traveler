@@ -13,9 +13,9 @@ const Rocket = ({ rocket }) => {
 
   return (
     <div className="rocket">
-      <img src={rocket.flickr_images[0]} alt={rocket.rocket_name} />
+      <img src={rocket.flickr_images[0]} alt={rocket.name} />
       <div className="rocket-detail">
-        <h2>{rocket.rocket_name}</h2>
+        <h2>{rocket.name}</h2>
         <p>
           {rocket.reserved && (
             <Badge bg="info">
@@ -38,7 +38,7 @@ const Rocket = ({ rocket }) => {
 Rocket.propTypes = {
   rocket: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    rocket_name: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     flickr_images: PropTypes.arrayOf(PropTypes.string).isRequired,
     reserved: PropTypes.bool,
