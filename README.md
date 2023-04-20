@@ -148,7 +148,7 @@ npx eslint .
 
 👤 **Authors**
 
-Shafiu Ibn Yushawu
+Chere Lemma
 - GitHub: [Zewdie Habtie](https://github.com/ZewdieMc)
 - Twitter: [Zewdie Habte](https://twitter.com/HabtieZewdie)
 
