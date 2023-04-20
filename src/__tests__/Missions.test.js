@@ -1,9 +1,8 @@
 import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
-// We're using our own custom render function and not RTL's render.
+import { Provider } from 'react-redux';
 import renderWithProviders from '../utils/test-utils';
 import Missions from '../components/Missions';
-import { Provider } from 'react-redux';
 import setupStore from '../redux/store';
 import server from '../mocks/server';
 
@@ -14,14 +13,14 @@ describe('Missions snapshot', () => {
         <Missions />
       </Provider>,
     );
-    const rockets = document.querySelector('.table-wrapper');
-    expect(rockets).toMatchSnapshot();
+    const missions = document.querySelector('.table-wrapper');
+    expect(missions).toMatchSnapshot();
   });
 });
 
-beforeAll(() => server.listen({ onUnhandledRequest: 'bypass' })); // Enable the mocking in tests.
-afterEach(() => server.resetHandlers()); // Reset any runtime handlers tests may use.
-afterAll(() => server.close()); // Clean up once the tests are done.
+beforeAll(() => server.listen({ onUnhandledRequest: 'bypass' }));
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 
 describe('Test missions before fetching API', () => {
   test('Test for Loading... state', () => {
