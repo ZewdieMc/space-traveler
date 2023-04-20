@@ -1,70 +1,202 @@
-# Getting Started with Create React App
+# Space Traveler's Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<!-- TABLE OF CONTENTS -->
 
-In the project directory, you can run:
+# 📗 Table of Contents<a name="table-contents"></a>
 
-### `npm start`
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- PROJECT DESCRIPTION -->
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 📖 About <a name="about-project"></a>
 
-### `npm test`
+A single page web application that provides a platform for scientists to get booked for reservations and join missions to space travel.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠 Built With <a name="built-with"></a> 
 
-### `npm run build`
+### Tech Stack <a name="tech-stack"></a>
+- [React](https://react.dev)
+- [Redux](https://react-redux.js.org)
+- [React-Boostrap](https://react-bootstrap.github.io/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Database <a name="data-base"></a>
+- API dependdencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="#"></a></li>
+  </ul>
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="#">N/A</a></li>
+  </ul>
+</details>
 
-### `npm run eject`
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="#">N/A</a></li>
+  </ul>
+</details>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- Features -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Key Feature <a name="key-features"></a>
+ - Join missions to space 
+ - Booked reservation for space travel
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="right">(<a href="#table-contents">back to top</a>)</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<!-- LIVE DEMO -->
+## 🚀 Live Demo <a name="live-demo"></a> 
+ Coming soon
 
-## Learn More
+<!-- [Space Traveler's Hub]() -->
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="right">(<a href="#table-contents">back to top</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- GETTING STARTED -->
 
-### Code Splitting
+## 💻 Getting Started <a name="getting-started"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To get the content of this project locally you need to run the following commands in your terminal.
 
-### Analyzing the Bundle Size
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- IDE (code editor) like: VScode, Sublime, etc
+- [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Setup
 
-### Advanced Configuration
+1. Download the **Zip** file or clone the repo with:
+```bash
+git clone https://github.com/ZewdieMc/space-traveler
+```
+2. To access cloned directory run:
+```bash
+cd space-traveler
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Install
 
-### Deployment
+> To install linters and other project's dependencies run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm install
+```
 
-### `npm run build` fails to minify
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To run the project, execute the following command: 
+
+- Excute below command in the terminal to serve live 
+```bash
+npm run dev
+```
+
+## Run Test for Linters
+
+For tracking linter errors locally you need to follow these steps:
+
+1. For tracking linter errors in HTML files run:
+```bash 
+npx hint .
+```
+
+2. For tracking linter errors in CSS or SASS files run:
+
+```bash
+npx stylelint "\*_/_.{css,scss}"
+```
+
+3. For tracking linter errors in JavaScript files run:
+
+```bash
+npx eslint .
+```
+
+<!-- ### Deployment -->
+
+<!-- [Space Traveler's Hub]() -->
+
+<p align="right">(<a href="#table-contents">back to top</a>)</p>
+
+<!-- AUTHOR -->
+
+## 👥 Author: <a name="authors"></a>
+
+👤 **Authors**
+
+Shafiu Ibn Yushawu
+- GitHub: [Zewdie Habtie](https://github.com/ZewdieMc)
+- Twitter: [Zewdie Habte](https://twitter.com/HabtieZewdie)
+
+Zewdie Habtie
+- GitHub: [Chere Lemma](https://github.com/cherelemma)
+- Twitter: [Chere Lemma](https://twitter.com/Chere21271613)
+
+<p align="right">(<a href="#table-contents">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- Mobile version resposiveness.
+- Implement leave mission and cancel reservation functionality in My Profile. 
+
+<p align="right">(<a href="#table-contents">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+[Kindly raise issue here](https://github.com/ZewdieMc/space-traveler/issues)
+
+<p align="right">(<a href="#table-contents">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project, kindly follow me on GitHub 😊
+
+<p align="right">(<a href="#table-contents">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+Much appreciation goes to microverse and Space X for the availability of the API to practice.
+
+<p align="right">(<a href="#table-contents">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#table-contents">back to top</a>)</p>
