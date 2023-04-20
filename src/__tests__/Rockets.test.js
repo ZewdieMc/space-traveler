@@ -5,20 +5,9 @@ import renderWithProviders from '../utils/test-utils';
 import Rockets from '../components/Rockets';
 import server from '../mocks/server';
 
-beforeAll(() => {
-  // Enable the mocking in tests.
-  server.listen();
-});
-
-afterEach(() => {
-  // Reset any runtime handlers tests may use.
-  server.resetHandlers();
-});
-
-afterAll(() => {
-  // Clean up once the tests are done.
-  server.close();
-});
+beforeAll(() => server.listen({ onUnhandledRequest: 'bypass' })); // Enable the mocking in tests.
+afterEach(() => server.resetHandlers()); // Reset any runtime handlers tests may use.
+afterAll(() => server.close()); // Clean up once the tests are done.
 
 describe('Test rockets before fetching API', () => {
   test('Test for Loading... state', () => {
