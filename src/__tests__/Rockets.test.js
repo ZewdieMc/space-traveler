@@ -25,7 +25,7 @@ afterAll(() => server.close()); // Clean up once the tests are done.
 describe('Test rockets before fetching API', () => {
   test('Test for Loading... state', () => {
     renderWithProviders(<Rockets />);
-    expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
+    expect(screen.queryByText(/Loading.../i)).toBeInTheDocument();
     expect(screen.queryByText(/Reserve Rocket/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Falcon 1/i)).not.toBeInTheDocument();
   });
