@@ -31,7 +31,7 @@ describe('Test missions before fetching API', () => {
   });
 });
 
-describe('Test missions after fetching API', () => {0
+describe('Test missions after fetching API', () => {
   test('Test if missions are rendered after fetching', async () => {
     renderWithProviders(<Missions />);
     expect(await screen.findAllByText(/Join Mission/i)).toHaveLength(10);
