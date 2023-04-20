@@ -1,9 +1,8 @@
 import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
-// We're using our own custom render function and not RTL's render.
+import { Provider } from 'react-redux';
 import renderWithProviders from '../utils/test-utils';
 import Rockets from '../components/Rockets';
-import { Provider } from 'react-redux';
 import setupStore from '../redux/store';
 import server from '../mocks/server';
 
@@ -18,7 +17,6 @@ describe('Rocket snapshot', () => {
     expect(rockets).toMatchSnapshot();
   });
 });
-
 
 beforeAll(() => server.listen({ onUnhandledRequest: 'bypass' })); // Enable the mocking in tests.
 afterEach(() => server.resetHandlers()); // Reset any runtime handlers tests may use.
