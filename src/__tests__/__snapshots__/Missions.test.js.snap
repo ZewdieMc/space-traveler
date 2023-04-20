@@ -28,5 +28,8 @@ exports[`Missions snapshot should render missions data correctly 1`] = `
     </thead>
     <tbody />
   </table>
+  <p>
+    Loading...
+  </p>
 </div>
 `;

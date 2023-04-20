@@ -34,7 +34,7 @@ function Profile() {
         <Card style={{ width: '100%' }}>
           {reservedRockets.length ? reservedRockets.map((rocket) => (
             <ListGroup key={rocket.id} variant="flush">
-              <ListGroup.Item>{rocket.rocket_name}</ListGroup.Item>
+              <ListGroup.Item>{rocket.name}</ListGroup.Item>
             </ListGroup>
           ))
             : (

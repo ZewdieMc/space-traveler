@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
-// We're using our own custom render function and not RTL's render.
 import { Provider } from 'react-redux';
 import renderWithProviders from '../utils/test-utils';
 import Rockets from '../components/Rockets';
