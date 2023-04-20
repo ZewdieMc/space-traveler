@@ -16,7 +16,6 @@ const Missions = () => {
 
   return (
     <div className="table-wrapper">
-      {error && <p>Error Loading missions</p>}
       {isLoading && <p>Loading...</p>}
       {missions && (
       <Table striped bordered>
@@ -40,6 +39,7 @@ const Missions = () => {
         </tbody>
       </Table>
       )}
+      {error && <p>Error Loading missions</p>}
     </div>
   );
 };

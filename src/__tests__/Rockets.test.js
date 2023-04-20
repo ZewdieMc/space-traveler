@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
 // We're using our own custom render function and not RTL's render.
+import { Provider } from 'react-redux';
 import renderWithProviders from '../utils/test-utils';
 import Rockets from '../components/Rockets';
-import { Provider } from 'react-redux';
 import setupStore from '../redux/store';
 import server from '../mocks/server';
 
@@ -19,7 +19,6 @@ describe('Rocket snapshot', () => {
   });
 });
 
-
 beforeAll(() => server.listen({ onUnhandledRequest: 'bypass' })); // Enable the mocking in tests.
 afterEach(() => server.resetHandlers()); // Reset any runtime handlers tests may use.
 afterAll(() => server.close()); // Clean up once the tests are done.
@@ -27,7 +26,7 @@ afterAll(() => server.close()); // Clean up once the tests are done.
 describe('Test rockets before fetching API', () => {
   test('Test for Loading... state', () => {
     renderWithProviders(<Rockets />);
-    expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
+    expect(screen.queryByText(/Loading.../i)).toBeInTheDocument();
     expect(screen.queryByText(/Reserve Rocket/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Falcon 1/i)).not.toBeInTheDocument();
   });

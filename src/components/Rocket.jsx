@@ -13,7 +13,7 @@ const Rocket = ({ rocket }) => {
 
   return (
     <div className="rocket">
-      <img src={rocket.flickr_images[0]} alt={rocket.rocket_name} />
+      <img src={rocket.flickr_images[0]} alt={rocket.name} />
       <div className="rocket-detail">
         <h2>{rocket.name}</h2>
         <p>

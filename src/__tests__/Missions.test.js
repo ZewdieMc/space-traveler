@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
-import { screen } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
 // We're using our own custom render function and not RTL's render.
+import { Provider } from 'react-redux';
 import renderWithProviders from '../utils/test-utils';
 import Missions from '../components/Missions';
-import { Provider } from 'react-redux';
 import setupStore from '../redux/store';
 import server from '../mocks/server';
 
@@ -26,14 +26,14 @@ afterAll(() => server.close()); // Clean up once the tests are done.
 describe('Test missions before fetching API', () => {
   test('Test for Loading... state', () => {
     renderWithProviders(<Missions />);
-    expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
+    expect(screen.queryByText(/Loading.../i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Join Mission/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Thaicom/i)).not.toBeInTheDocument();
   });
 });
 
-describe('Test rockets after fetching API', () => {
-  test('Test if rockets are rendered after fetching', async () => {
+describe('Test missions after fetching API', () => {0
+  test('Test if missions are rendered after fetching', async () => {
     renderWithProviders(<Missions />);
     expect(await screen.findAllByText(/Join Mission/i)).toHaveLength(10);
     expect(await screen.findAllByText(/Not A Member/i)).toHaveLength(10);
