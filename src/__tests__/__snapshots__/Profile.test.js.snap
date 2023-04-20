@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile snapshot should render Profile page correctly 1`] = `
+<div
+  class="profile-wrapper"
+>
+  <div
+    style="width: 100%;"
+  >
+    <h4>
+      My Missions
+    </h4>
+    <div
+      class="card"
+      style="width: 100%;"
+    >
+      <div
+        class="list-group"
+      >
+        <div
+          class="list-group-item"
+        >
+          No Missions Joined
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="width: 100%;"
+  >
+    <h4>
+      My Rockets
+    </h4>
+    <div
+      class="card"
+      style="width: 100%;"
+    >
+      <div
+        class="list-group"
+      >
+        <div
+          class="list-group-item"
+        >
+          You have no reserved rockets
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

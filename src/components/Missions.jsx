@@ -6,6 +6,8 @@ import MissionsPage from './MissionsPage';
 
 const Missions = () => {
   const { missions } = useSelector((state) => state.missions);
+  const { error } = useSelector((state) => state.missions.error);
+  const { isLoading } = useSelector((state) => state.missions.isLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,6 +16,8 @@ const Missions = () => {
 
   return (
     <div className="table-wrapper">
+      {isLoading && <p>Loading...</p>}
+      {missions && (
       <Table striped bordered>
         <thead>
           <tr>
@@ -25,7 +29,7 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          {missions && missions.map((mission, index) => (
+          {missions.map((mission, index) => (
             <MissionsPage
               key={mission.id}
               mission={mission}
@@ -34,6 +38,8 @@ const Missions = () => {
           ))}
         </tbody>
       </Table>
+      )}
+      {error && <p>Error Loading missions</p>}
     </div>
   );
 };
