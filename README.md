@@ -151,7 +151,13 @@ npx stylelint "\*_/_.{css,scss}"
 ```bash
 npx eslint .
 ```
+## Test Command
 
+For unit testing of the app run:
+
+ ```JS
+npm test
+```
 <!-- ### Deployment -->
 
 <!-- [Space Traveler's Hub]() -->
