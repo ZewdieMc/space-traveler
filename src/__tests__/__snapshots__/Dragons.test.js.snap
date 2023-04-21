@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dragon snapshot should render heading correctly 1`] = `
+<div
+  class="dragon-list"
+>
+  <p>
+    Loading...
+  </p>
+</div>
+`;
