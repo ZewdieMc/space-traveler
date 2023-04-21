@@ -1,11 +1,11 @@
 <a name="readme-top"></a>
 
 <div align="center">
-    <img src="SpaceTraveller.PNG" alt="logo" width="500"  height="300" />
+    <img src="SpaceTraveller.PNG" alt="logo"  height="300" />
   <br/>
 
 <h3><b>Space Traveler's Hub </b></h3>
-
+</div>
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents<a name="table-contents"></a>
