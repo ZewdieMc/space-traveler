@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rocket snapshot should render heading correctly 1`] = `
+<div
+  class="rocket-list"
+>
+  <p>
+    Loading...
+  </p>
+</div>
+`;
