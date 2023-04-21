@@ -42,16 +42,17 @@ nav ul .active {
 }
 
 .profile-wrapper {
-  width: 80%;
+  width: 90%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   margin: auto;
   margin-top: 2.5%;
   gap: 2rem;
 }
 
-.space-rockets {
+.space-rockets,
+.space-dragons {
   padding: 2rem;
   list-style: none;
   display: flex;
@@ -59,25 +60,29 @@ nav ul .active {
   gap: 1rem;
 }
 
-.rocket-list {
+.rocket-list,
+.dragon-list {
   display: flex;
   gap: 1rem;
   flex-direction: column;
   padding: 2rem;
 }
 
-.rocket-list .rocket {
+.rocket-list .rocket,
+.dragon-list .dragon {
   display: flex;
   gap: 1rem;
 }
 
-.rocket-list .rocket img {
+.rocket-list .rocket img,
+.dragon-list .dragon img {
   width: 200px;
   height: 200px;
   object-fit: cover;
 }
 
-.rocket-list .rocket-details {
+.rocket-list .rocket-details,
+.dragon-list .dragon-details {
   display: flex;
   flex-direction: column;
   gap: 1rem;
