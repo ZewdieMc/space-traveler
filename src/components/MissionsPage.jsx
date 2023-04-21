@@ -2,17 +2,13 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
+import { joinMission } from '../redux/missions/missionsSlice';
 
 const MissionsPage = ({ mission, index }) => {
   const dispatch = useDispatch();
 
   const handleJoiningMissions = (id) => {
     dispatch(joinMission(id));
-  };
-
-  const handleLeavingMissions = (id) => {
-    dispatch(leaveMission(id));
   };
 
   return (
@@ -36,7 +32,7 @@ const MissionsPage = ({ mission, index }) => {
             type="button"
             variant="outline-secondary"
             size="lg"
-            onClick={() => handleLeavingMissions(mission.id)}
+            onClick={() => handleJoiningMissions(mission.id)}
           >
             Leave Mission
           </Button>

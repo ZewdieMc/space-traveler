@@ -20,6 +20,14 @@ const NavBar = () => (
         <NavLink
           className={({ isActive }) => (isActive ? 'active' : null)}
           style={({ isActive }) => (isActive ? { textDecoration: 'underline', fontWeight: 'bold' } : { textDecoration: 'none' })}
+          to="/dragons"
+        >
+          Dragons
+        </NavLink>
+        <span>|</span>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'active' : null)}
+          style={({ isActive }) => (isActive ? { textDecoration: 'underline', fontWeight: 'bold' } : { textDecoration: 'none' })}
           to="/missions"
         >
           Missions
