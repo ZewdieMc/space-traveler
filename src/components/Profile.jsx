@@ -9,8 +9,10 @@ function Profile() {
   });
 
   const rockets = useSelector((state) => state.rockets.rockets);
-
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+
+  const dragons = useSelector((state) => state.dragons.dragons);
+  const reservedDragons = dragons.filter((dragon) => dragon.reserved);
 
   return (
     <div className="profile-wrapper">
@@ -40,6 +42,21 @@ function Profile() {
             : (
               <ListGroup>
                 <ListGroup.Item>You have no reserved rockets</ListGroup.Item>
+              </ListGroup>
+            )}
+        </Card>
+      </div>
+      <div style={{ width: '100%' }}>
+        <h4>My Dragons</h4>
+        <Card style={{ width: '100%' }}>
+          {reservedDragons.length ? reservedDragons.map((dragon) => (
+            <ListGroup key={dragon.id} variant="flush">
+              <ListGroup.Item>{dragon.name}</ListGroup.Item>
+            </ListGroup>
+          ))
+            : (
+              <ListGroup>
+                <ListGroup.Item>You have no reserved dragons</ListGroup.Item>
               </ListGroup>
             )}
         </Card>
