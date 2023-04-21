@@ -25,7 +25,7 @@ afterAll(() => server.close());
 describe('Test missions before fetching API', () => {
   test('Test for Loading... state', () => {
     renderWithProviders(<Missions />);
-    expect(screen.queryByText(/Loading.../i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Loading.../i)).toBeInTheDocument();
     expect(screen.queryByText(/Join Mission/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Thaicom/i)).not.toBeInTheDocument();
   });
