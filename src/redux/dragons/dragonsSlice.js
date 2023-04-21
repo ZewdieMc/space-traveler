@@ -45,6 +45,7 @@ const dragonsSlice = createSlice({
         name: dragon.name,
         description: dragon.description,
         flickr_images: [...dragon.flickr_images],
+        wikipedia: dragon.wikipedia,
       }));
       return ({
         ...state,
