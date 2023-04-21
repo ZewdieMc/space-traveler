@@ -164,11 +164,11 @@ npx eslint .
 
 👤 **Authors**
 
-Chere Lemma
+Zewdie Habtie
 - GitHub: [Zewdie Habtie](https://github.com/ZewdieMc)
 - Twitter: [Zewdie Habte](https://twitter.com/HabtieZewdie)
 
-Zewdie Habtie
+Chere Lemma 
 - GitHub: [Chere Lemma](https://github.com/cherelemma)
 - Twitter: [Chere Lemma](https://twitter.com/Chere21271613)
 
