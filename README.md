@@ -158,6 +158,8 @@ For unit testing of the app run:
  ```JS
 npm test
 ```
+![WhatsApp Image 2023-04-21 at 08 48 57](https://user-images.githubusercontent.com/73167960/233574251-196c1a67-b879-4fcf-bd38-3903b0e1e94f.jpg)
+
 <!-- ### Deployment -->
 
 <!-- [Space Traveler's Hub]() -->
